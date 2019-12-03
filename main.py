@@ -35,9 +35,11 @@ def structure_activity():
         ])
     #yearly stat: main
     programs_structure[year] = monthly
-    
-    print(json.dumps(programs_structure))
-    
+        
+    with open('structure.json', 'w') as json_file:
+        json.dump(programs_structure, json_file, indent=4)
+
+
 def main():
     
     flashes = set()
